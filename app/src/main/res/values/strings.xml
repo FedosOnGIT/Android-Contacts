@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">MyContacts</string>
+    <string name="greetings">Привет, пользователь!</string>
+    <string name="first_name">First user</string>
+    <string name="first_phone">+79999999999</string>
+    <string name="avatar_of_person">avatar of person</string>
+    <string name="description_for_call">phone call</string>
+</resources>
