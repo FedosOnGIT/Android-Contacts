@@ -40,7 +40,7 @@ class MainActivity : AppCompatActivity() {
             settings.putExtra(PhonePage.FOR_EXTRA_NAME, it.contact.name)
             Toast.makeText(
                 this,
-                "Clicked on ${it.image}",
+                "Clicked on ${it.contact.name}",
                 Toast.LENGTH_SHORT
             ).show()
             startActivity(settings)
@@ -65,12 +65,9 @@ class MainActivity : AppCompatActivity() {
     data class MyContact(val contact: Contact, val image: Int)
 
     private val avatars = arrayOf(
-        R.drawable.avatar_1,
         R.drawable.avatar_2,
-        R.drawable.avatar_3,
         R.drawable.avatar_4,
         R.drawable.avatar_5,
-        R.drawable.avatar_6,
         R.drawable.avatar_7,
         R.drawable.avatar_8
     )
@@ -78,7 +75,7 @@ class MainActivity : AppCompatActivity() {
     private fun createContacts() {
         var index = 0
         contacts = numbers.map {
-            MyContact(it, avatars[(index++) % 8])
+            MyContact(it, avatars[(index++) % 5])
         }
     }
 

@@ -7,4 +7,11 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="cardStyle">
+        <item name = "android:background">@drawable/gradient_for_card</item>
+    </style>
+
+    <style name="callStyle">
+        <item name = "android:background">@drawable/for_phone_call</item>
+    </style>
 </resources>

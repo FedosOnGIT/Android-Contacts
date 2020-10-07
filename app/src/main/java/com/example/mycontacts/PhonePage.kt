@@ -16,7 +16,7 @@ class PhonePage : AppCompatActivity() {
         makeImage()
     }
 
-    fun makeImage() {
+    private fun makeImage() {
         val avatar = intent.getIntExtra(FOR_EXTRA_IMAGE, 0)
         calling_avatar.setImageResource(avatar)
         val nickname = intent.getStringExtra(FOR_EXTRA_NAME)
