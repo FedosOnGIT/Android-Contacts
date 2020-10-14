@@ -1,8 +1,13 @@
 <resources>
-    <string name="app_name">MyContacts</string>
-    <string name="greetings">Привет, пользователь!</string>
-    <string name="first_name">First user</string>
-    <string name="first_phone">+79999999999</string>
-    <string name="avatar_of_person">avatar of person</string>
-    <string name="description_for_call">phone call</string>
+    <string name="app_name" translatable="false">MyContacts</string>
+    <string name="greetings" translatable="false">Привет, пользователь!</string>
+    <string name="first_name" translatable="false">First user</string>
+    <string name="first_phone" translatable="false">+79999999999</string>
+    <string name="avatar_of_person" translatable="false">avatar of person</string>
+    <string name="description_for_call" translatable="false">phone call</string>
+    <plurals name = "numberOfContacts">
+        <item quantity = "one"> %d contact</item>
+        <item quantity = "few"> %d contacts</item>
+        <item quantity = "other"> %d contacts</item>
+    </plurals>
 </resources>

@@ -12,6 +12,7 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+// little change
 
 class MainActivity : AppCompatActivity() {
     private lateinit var recyclerView: RecyclerView
@@ -24,6 +25,12 @@ class MainActivity : AppCompatActivity() {
             askPermission()
         } else {
             numbers = fetchAllContacts()
+            val contactNumber = resources.getQuantityString(R.plurals.numberOfContacts, numbers.size, numbers.size)
+            Toast.makeText(
+                this,
+                "Нашлось $contactNumber",
+                Toast.LENGTH_SHORT
+            ).show()
             createContacts()
             initRecycler()
         }

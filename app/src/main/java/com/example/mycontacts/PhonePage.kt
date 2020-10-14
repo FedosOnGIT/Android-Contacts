@@ -1,8 +1,11 @@
 package com.example.mycontacts
 
+import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_phone_page.*
+import kotlinx.android.synthetic.main.contact.*
 
 class PhonePage : AppCompatActivity() {
     companion object {
@@ -14,6 +17,11 @@ class PhonePage : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_phone_page)
         makeImage()
+        calling_card.setOnClickListener {
+            val intent = Intent(Intent.ACTION_DIAL)
+            intent.data = Uri.parse("tel:$phone")
+            startActivity(intent, null)
+        }
     }
 
     private fun makeImage() {
