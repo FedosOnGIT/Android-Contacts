@@ -24,16 +24,20 @@ class MainActivity : AppCompatActivity() {
         if (!checkPermission()) {
             askPermission()
         } else {
-            numbers = fetchAllContacts()
-            val contactNumber = resources.getQuantityString(R.plurals.numberOfContacts, numbers.size, numbers.size)
-            Toast.makeText(
-                this,
-                "Нашлось $contactNumber",
-                Toast.LENGTH_SHORT
-            ).show()
-            createContacts()
-            initRecycler()
+            doIt()
         }
+    }
+
+    private fun doIt() {
+        numbers = fetchAllContacts()
+        val contactNumber = resources.getQuantityString(R.plurals.numberOfContacts, numbers.size, numbers.size)
+        Toast.makeText(
+            this,
+            "Нашлось $contactNumber",
+            Toast.LENGTH_SHORT
+        ).show()
+        createContacts()
+        initRecycler()
     }
 
 
@@ -96,8 +100,7 @@ class MainActivity : AppCompatActivity() {
             MY_CONSTANT -> {
                 if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                     Toast.makeText(this, "Thank you for permission", Toast.LENGTH_SHORT).show()
-                    numbers = fetchAllContacts()
-                    createContacts()
+                    doIt()
                 } else {
                     Toast.makeText(this, "Sorry but I don't have your permission", Toast.LENGTH_SHORT).show()
                 }
